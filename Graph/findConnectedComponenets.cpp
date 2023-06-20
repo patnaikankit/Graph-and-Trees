@@ -7,6 +7,7 @@ bool vis[N];
 // to represent the connected components
 // cc will store all the components
 // current_cc will store elements of the current component
+// Number of dfs calls signifies number of components
 vector<vector<int>> cc;
 vector<int> current_cc;
 

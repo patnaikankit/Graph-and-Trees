@@ -1,7 +1,7 @@
 // In multi source bfs we have multiple starting points and we initilize bfs simultaneously from each of these points
 // Here we find out multiple root nodes based on the question and apply bfs from all of these root nodes
 // visited array is kept to track each node 
-// the shortest path between any node and the starting node is used to determine its level because it can be reached fastest from the particular starting node
+// the shortest path between any node and a particular starting node is used to determine its level because it can be reached fastest from that particular starting node
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e3 + 10;

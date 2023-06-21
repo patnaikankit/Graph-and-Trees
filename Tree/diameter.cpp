@@ -1,6 +1,6 @@
 // Diameter of tree - distance of the longest path between two vertices
 // 1. from any node find max depth node - it is guaranteed to be a part of the diameter
-// 2. with that node as the root find the max depth
+// 2. with that node as the root find the max depth node
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 10;

@@ -1,8 +1,8 @@
-// Used in order to find the shortest distance in a weighted graph
+// Used in order to find the shortest distance in a weighted graph from one node to all nodes - negative nodes not allowed
 // initially all the distances are marked as infinity
 // We put each node in priority queue and mark it visited(if not visited else skip) and calculate its distance from the root node
 // after that we visit each of the child node and calculate the distance from the root 
-// if it can be minimized we will assign this new value to that node and that node to the queue
+// if it can be minimized we will assign this new value to that node and add that node to the queue
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 10;

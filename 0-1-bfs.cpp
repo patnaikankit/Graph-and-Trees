@@ -3,7 +3,7 @@
 // 0-1 bfs is special case where weights are 0 and 1 only - mostly used in graphs
 // The intuition is that at any given moment the queue will have nodes of two different levels and based on the weights we will assign them their position
 // Edges with weight 0 and pushed at the front while edges with weight 1 are pushed at the back
-// A visited array is not used because we may have to compare a visited node having multiple edges with different weights in order to assign it proper location
+// A visited array is not used because we may have to compare a visited node having multiple edges with different weights in order to assign its proper location
 // In this case a node will at most appear two times in the queue
 #include <bits/stdc++.h>
 using namespace std;

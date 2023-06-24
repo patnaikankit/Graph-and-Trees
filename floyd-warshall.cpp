@@ -29,7 +29,7 @@ int main(){
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= n; j++){
                 if(dist[i][k] != INF && dist[k][j] != INF){
-                    // whenever a kth new node is added the distance from the starting node to the target node via the kth node is calculated by comparing the distances with the existing (k - 1)th node and the new node
+                    // whenever a kth new node is added the distance from the starting node to the target node is calculated by comparing the distances with the existing (k - 1)th node and via the kth new node
                     dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
                 }
             }

@@ -3,7 +3,7 @@
 // 1. sort the edges of the graph 
 // 2. start connecting the nodes by adding the smallest edge in the same place as that of the graph
 // 3. if on adding an edge a loop is forming then don't add that edge
-// 4. stop when all the edges are connected
+// 4. stop when all the nodes are connected
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 10;

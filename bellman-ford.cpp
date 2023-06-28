@@ -11,6 +11,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int INF = 1e9 + 7;
+vector<pair<int, pair<int, int>>> graph;
+
 
 bool bellmanFord(int n, int m, vector<pair<int, pair<int, int>>>& graph) {
     vector<int> distance(n, INF);
@@ -26,7 +28,7 @@ bool bellmanFord(int n, int m, vector<pair<int, pair<int, int>>>& graph) {
             }
         }
     }
-    // checking for negative cycles
+    // checking for negative cycle
     for(int j = 0; j < m; j++){
         int u = graph[j].first;
         int v = graph[j].second.first;
@@ -41,19 +43,17 @@ bool bellmanFord(int n, int m, vector<pair<int, pair<int, int>>>& graph) {
 int main() {
     int n, m;
     cin>>n>>m;
-    vector<pair<int, pair<int, int>>> graph;
-    for (int i = 0; i < m; i++){
+    for(int i = 0; i < m; i++){
         int u, v, wt;
         cin>>u>>v>>wt;
         graph.push_back({u, {v, wt}});
     }
-    bool hasNegativeCycle = bellmanFord(n, m, graph);
-    if(hasNegativeCycle){
+    bool cycle = bellmanFord(n, m, graph);
+    if(cycle){
         cout<<"Graph contains a negative cycle"<<endl;
     } 
     else{
         cout<<"Graph does not contain a negative cycle"<<endl;
     }
-
     return 0;
 }

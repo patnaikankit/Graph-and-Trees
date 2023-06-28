@@ -1,32 +1,33 @@
+// Undirected unweighted/equal weights graph
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 10;
 vector<int> g[N];
-int vis[N];
-int level[N];
+int vis[N], parent[N];
 
 void bfs(int source){
     queue<int> q;
     q.push(source);
     vis[source] = 1;
+    parent[source] = -1;
     while (!q.empty()){
         int cur_v = q.front();
         q.pop();
-        cout<<cur_v<<" ";
         for(int child: g[cur_v]){
             if(!vis[child]){
-                q.push(child);
                 vis[child] = 1;
-                level[child] = level[cur_v] + 1;
+                parent[child] = cur_v;
+                q.push(child);
             }
         }
     }
-    cout<<endl;
 }
 
 int main(){
     int n,m;
     cin>>n>>m;
+    int start, end;
+    cin>>start>>end;
     for(int i = 0; i < m; i++){
         int u,v;
         cin>>u>>v;
@@ -34,8 +35,17 @@ int main(){
         g[v].push_back(u);
     }
     bfs(1);
-    for(int i = 1; i <= n; i++){
-        cout<<i<<" : "<<level[i]<<endl;
+    vector<int> vec;
+    int cur_node = end;
+    vec.push_back(cur_node);
+    while(cur_node != start){
+        cur_node = parent[cur_node];
+        vec.push_back(cur_node);
     }
+    reverse(vec.begin(), vec.end());
+    for(int i = 0; i < vec.size(); i++){
+        cout<<vec[i]<<" ";
+    }
+    cout<<endl;
     return 0;
 }

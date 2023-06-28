@@ -11,39 +11,39 @@ int vis[N];
 
 int main(){
     int n,m;
-cin>>n>>m;
-vector<int> indegree(n+1, 0); // Initialize the indegree vector with 0s
-for(int i = 0; i < m; i++){
-    int u,v;
-    cin>>u>>v;
-    graph[u].push_back(v);
-    indegree[v]++; // Update the indegree of 'v'
-}
-
-queue<int> q;
-for(int i = 1; i <= n; i++){ // Start from node 1
-    if(indegree[i] == 0){
-        q.push(i);
+    cin>>n>>m;
+    vector<int> indegree(n + 1, 0); 
+    for(int i = 0; i < m; i++){
+        int u,v;
+        cin>>u>>v;
+        graph[u].push_back(v);
+        indegree[v]++; 
     }
-}
 
-vector<int> vec;
-while(!q.empty()){
-    int front = q.front();
-    q.pop();
-    vec.push_back(front);
-    for(auto child: graph[front]){
-        indegree[child]--;
-        if(indegree[child] == 0){
-            q.push(child);
+    queue<int> q;
+    for(int i = 1; i <= n; i++){ 
+        if(indegree[i] == 0){
+            q.push(i);
         }
     }
-}
 
-for(int i = 0; i < vec.size(); i++){
-    cout<<vec[i]<<" ";
-}
-cout<<endl;
+    vector<int> vec;
+    while(!q.empty()){
+        int front = q.front();
+        q.pop();
+        vec.push_back(front);
+        for(auto child: graph[front]){
+            indegree[child]--;
+            if(indegree[child] == 0){
+                q.push(child);
+            }
+        }
+    }
+
+    for(int i = 0; i < vec.size(); i++){
+        cout<<vec[i]<<" ";
+    }
+    cout<<endl;
 
     return 0;
 }

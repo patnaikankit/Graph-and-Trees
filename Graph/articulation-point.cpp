@@ -7,13 +7,6 @@ const int N = 1e5 + 10;
 vector<int> graph[N];
 int vis[N];
 
-int min(int x, int y){
-    if(x > y){
-        return y;
-    }
-    return x;
-}
-
 void dfs(int cur_v, int parent, int &timer,  vector<int> &disc,  vector<int> &low, vector<int> &ans, vector<int> graph[], int vis[]){
     vis[cur_v] = 1;
     disc[cur_v] = low[cur_v] = timer++;

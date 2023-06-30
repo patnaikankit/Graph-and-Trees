@@ -44,7 +44,6 @@ int main(){
         graph[u].push_back(v);
         graph[v].push_back(u);
     }
-
     int timer = 0, parent = -1;
     vector<int> disc(N, -1), low(N, -1);
     vector<vector<int>> ans;

@@ -1,6 +1,6 @@
 // Used in directed graphs to find strongly connected components
 // first, we have to find the topological sort of the graph - this will provide us the order in which we have to make the dfs calls
-// second, we have to take the transpose of the graph - reverse the direction of the edges
+// second, we have to take the transpose of the graph - reverse the direction of the edges - to facilitate the dfs calls
 // third, start the dfs calls according to the topo sort
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,5 +1,5 @@
 // if you take 2 colours and start colouring the nodes in such a way that no 2 adjacent nodes have the same colour 
-// a linear graph with no cycles always and a graph containing an even length cycle are always bipartite
+// a linear graph with no cycles and a graph containing an even length cycle are always bipartite
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 10;

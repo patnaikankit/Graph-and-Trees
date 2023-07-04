@@ -14,7 +14,7 @@ bool bipartite(int node, vector<int> graph[]){
         int cur_v = q.front();
         q.pop();
         for(auto child: graph[cur_v]){
-            if(colour[child] == -1 || colour[child] == colour[cur_v]){
+            if(colour[child] == colour[cur_v]){
                 return false;
             }
             else if(colour[child] == -1){
@@ -35,6 +35,6 @@ int main(){
         graph[u].push_back(v);
         graph[v].push_back(u);
     }
-    cout<<bipartite(1, graph)<<endl;
+    cout<<bipartite(0, graph)<<endl;
     return 0;
 }
